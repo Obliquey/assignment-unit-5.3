@@ -1,8 +1,11 @@
 console.log('***** Music Collection *****')
 
+// initialize working array for our record store's collection
 let collection = [];
 
+// create function to add albums to our collection array. have function create object that includes album name, artist's name, and year published properties.
 function addToCollection (title, artist, yearPublished) {
+    // does the variable name here actually matter? When calling from the array later on, it only shows up as array[0], not as record. 
     let record = {
         title: title,
         artist: artist,
@@ -11,7 +14,9 @@ function addToCollection (title, artist, yearPublished) {
     collection.push(record);
     return record;
 }
-addToCollection('The Physics of Fire', 'Becoming The Archetype', '2007');
+
+// add some albums bruh! Some good tunes!
+addToCollection('Transit Blues', 'The Devil Wears Prada', '2016');
 addToCollection('Mood Valiant', 'Hiatus Kaiyote', '2021');
 addToCollection('Children Of Fire', 'Oh, Sleeper', '2011');
 addToCollection('As Blue as Indigo', 'Tigercub', '2021');
@@ -31,3 +36,4 @@ function showCollection (array) {
 }
 
 showCollection(collection);
+
