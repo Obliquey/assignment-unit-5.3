@@ -17,9 +17,17 @@ addToCollection('Children Of Fire', 'Oh, Sleeper', '2011');
 addToCollection('As Blue as Indigo', 'Tigercub', '2021');
 addToCollection('ZII', 'The Devil Wears Prada', '2021');
 addToCollection('Vessel', 'Twenty One Pilots', '2013');
+console.log(collection[0], collection[1], collection[2], collection[3], collection[4], collection[5])
+
 
 console.log(collection);
 
-function showCollection ([]) {
-    
+function showCollection (array) {
+    console.log(array.length);
+
+    for (let i = 0; i < array.length; i++) {
+        console.log(`${array[i].title} by ${array[i].artist} published in ${array[i].yearPublished}.`);
+    }
 }
+
+showCollection(collection);
