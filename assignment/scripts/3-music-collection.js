@@ -37,3 +37,49 @@ function showCollection (array) {
 
 showCollection(collection);
 
+
+function findByArtist (artist) {
+    let foundArtists = [];
+
+    for (let i = 0; i < collection.length; i++) {
+        if (collection[i].artist === artist) {
+            foundArtists.push(collection[i].artist);
+        }
+    }
+
+    if (foundArtists.length > 0) {
+        return console.log('Results:', foundArtists);
+    }
+    else if (foundArtists.length <= 0) {
+        return console.log('No Results', foundArtists);
+    }
+}
+
+findByArtist('Twenty One Pilots');
+
+
+// const searchCriteria = {
+//     artist: 'Oh, Sleeper',
+//     year: '2012',
+// }
+
+function search({artist, year}) {
+    let foundAlbums = [];
+
+    for (let i = 0; i < collection.length; i++) {
+        if (artist == collection[i].artist && year == collection[i].yearPublished) {
+            foundAlbums.push(collection[i])
+        }
+    }
+    if (foundAlbums.length > 0) {
+        return foundAlbums;
+    }
+    else if (foundAlbums.length < 0) {
+        return foundAlbums;
+    }
+    else if (artist == null || year == null) {
+        return collection;
+    }
+}
+
+console.log(search({artist: 'Doobie Brothers', year: '1990'}));
