@@ -58,28 +58,23 @@ function findByArtist (artist) {
 findByArtist('Twenty One Pilots');
 
 
-// const searchCriteria = {
-//     artist: 'Oh, Sleeper',
-//     year: '2012',
-// }
-
-function search({artist, year}) {
+function search({artist = null, year = null}) {
     let foundAlbums = [];
 
-    for (let i = 0; i < collection.length; i++) {
-        if (artist == collection[i].artist && year == collection[i].yearPublished) {
-            foundAlbums.push(collection[i])
-        }
-    }
-    if (foundAlbums.length > 0) {
-        return foundAlbums;
-    }
-    else if (foundAlbums.length < 0) {
-        return foundAlbums;
-    }
-    else if (artist == null || year == null) {
+    if (artist == null && year == null) {
         return collection;
     }
+
+    for (let i = 0; i < collection.length; i++) {
+        const checkYear = (!year || year == collection[i].yearPublished)
+        const checkArtist = (!artist || artist == collection[i].artist)
+
+            if (checkYear && checkArtist) {
+                foundAlbums.push(collection[i]);
+            }
+
+    }
+    return foundAlbums;
 }
 
-console.log(search({artist: 'Doobie Brothers', year: '1990'}));
+console.log(search({year: '2021'}));
