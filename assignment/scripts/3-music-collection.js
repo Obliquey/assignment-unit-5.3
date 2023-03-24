@@ -103,6 +103,25 @@ const moodValiant = [
     }
 ]
 
+const fakeTracklist = [
+    track1 = {
+        name: 'One',
+        duration: '2:00',
+    },
+    track2 = {
+        name: 'Two',
+        duration: '3:00',
+    },
+    track3 = {
+        name: 'Three',
+        duration: '1:50',
+    },
+    track4 = {
+        name: 'Sticks',
+        duration: '3:30',
+    }
+]
+
 
 // create function to add albums to our collection array. have function create object that includes album name, artist's name, and year published properties.
 function addToCollection (title, artist, yearPublished, trackList) {
@@ -122,10 +141,10 @@ function addToCollection (title, artist, yearPublished, trackList) {
 // add some albums bruh! Some good tunes!
 addToCollection('Transit Blues', 'The Devil Wears Prada', '2016',transitBlues);
 addToCollection('Mood Valiant', 'Hiatus Kaiyote', '2021', moodValiant);
-addToCollection('Children Of Fire', 'Oh, Sleeper', '2011');
-addToCollection('As Blue as Indigo', 'Tigercub', '2021');
-addToCollection('ZII', 'The Devil Wears Prada', '2021');
-addToCollection('Vessel', 'Twenty One Pilots', '2013');
+addToCollection('Children Of Fire', 'Oh, Sleeper', '2011', fakeTracklist);
+addToCollection('As Blue as Indigo', 'Tigercub', '2021', fakeTracklist);
+addToCollection('ZII', 'The Devil Wears Prada', '2021', fakeTracklist);
+addToCollection('Vessel', 'Twenty One Pilots', '2013', fakeTracklist);
 console.log(collection[0], collection[1], collection[2], collection[3], collection[4], collection[5])
 
 
@@ -198,7 +217,7 @@ function search({artist = null, year = null, trackName = null}) {
                 // loop through record properties
                 for (let j = 0; j < trackList.length; j++) {
                     if(trackName == trackList[j].name) {
-                        results.push(collection[i].trackList)
+                        results.push(trackList[j])
                     }
                 }
             }
